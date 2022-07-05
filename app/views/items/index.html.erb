@@ -3,7 +3,7 @@
 <div class="allcards">
   <% @items.each do |item| %>
   <div class="card" style="width: 18rem;">
-    <%= link_to cl_image_tag("xacrvk9drxisoggk2dca", height: 300, crop: :fill) %>
+    <%= link_to cl_image_tag("xacrvk9drxisoggk2dca", height: 300, crop: :fill), item_path(item) %>
     <div class="card-body">
       <p><b><%= item.name %></b></p>
       <p class="card-text"><%= item.description %></p>
