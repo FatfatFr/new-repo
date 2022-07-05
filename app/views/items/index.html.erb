@@ -4,10 +4,10 @@
   <% @items.each do |item| %>
 
   <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="assets/image.jpg" alt="Card image cap">
+  <%= image_tag "image.jpg", class: "card-img-top" %>
     <div class="card-body">
-      <%= link_to item.name, items_path(@items)%>
-      <p class="card-text">Brief description of the item.</p>
+      <<%= item.name %>
+      <p class="card-text"><%= item.description %></p>
     </div>
   </div>
 
