@@ -1,0 +1,9 @@
+<%= simple_form_for @item do |f| %>
+  <%= f.input :name, label: 'Your item', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :category %>
+  <%= f.input :available %>
+  <%= f.input :description %>
+  <%= f.association :price_per_day %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
+<% end %>
