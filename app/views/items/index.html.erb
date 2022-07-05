@@ -4,7 +4,10 @@
   <% @items.each do |item| %>
 
   <div class="card" style="width: 18rem;">
-  <%= image_tag "image.jpg", class: "card-img-top" %>
+
+<%= cl_image_tag("xacrvk9drxisoggk2dca",
+      width: 400, height: 300, crop: :fill) %>
+  <%# <%= image_tag "image.jpg", class: "card-img-top" %>
     <div class="card-body">
       <<%= item.name %>
       <p class="card-text"><%= item.description %></p>
