@@ -3,7 +3,12 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
+    favorites = []
     @items = Item.all
+    @items.each do |item|
+      favorites << Favorite.where(item: item, user: current_user)
+    end
+    @favorites = favorites
   end
 
   def show
@@ -22,6 +27,14 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @item_params.update(item_params)
+    redirect_to item_path(@item)
   end
 
   private

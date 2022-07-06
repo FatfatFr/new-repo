@@ -1,22 +1,21 @@
 <h1>All the items</h1>
 
 <div class="allcards">
-  <% @items.each do |item| %>*
+  <% @items.each do |item| %>
 
-  <div class="card" style="width: 20rem; height: auto">
-    <%= link_to cl_image_tag("xacrvk9drxisoggk2dca", height: 300, crop: :fill), item_path(item) %>
-    <div class="card-body">
-      <p><b><%= item.name %></b></p>
-      <p class="card-text"><%= item.description %></p>
+    <div class="card" style="width: 20rem; height: auto">
+      <%= link_to cl_image_tag("xacrvk9drxisoggk2dca", height: 300, crop: :fill), item_path(item) %>
+      <div class="card-body">
+        <p><b><%= item.name %></b></p>
+        <p class="card-text"><%= item.description %></p>
+      </div>
     </div>
-  </div>
 
-  <% if item.favorite?(current_user) %>
-    <h4>Coeur</h4>
+    <% if item.favorite?(current_user)%>
+      <h4>Coeur</h4>
     <% else %>
-    <h4 class="text-white bg-red-300 rounded-full">pas coeur</h4>
-  <% end %>
-
+      <h4 class="text-white bg-red-300 rounded-full">pas coeur</h4>
+    <% end %>
 
   <% end %>
 </div>

@@ -1,1 +1,11 @@
-<%= render 'form', item: @item %>
+<%= simple_form_for @item do |f| %>
+  <%= f.input :name, label: 'Your item', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :category %>
+  <%= f.input :available %>
+  <%= f.input :description %>
+  <%= f.input :price_per_day %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
+<% end %>
+
+<p><%= link_to 'Back to all the items', items_path, class: "green btn-login-page" %></p>
