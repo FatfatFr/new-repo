@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :items, only: [:show, :index, :new, :create] do
     resources :bookings, only: [:show, :create, :update, :destroy]
+    resources :favorites, only: [:create, :destroy]
   end
 end
