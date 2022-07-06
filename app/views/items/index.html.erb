@@ -4,18 +4,17 @@
   <% @items.each do |item| %>
 
     <div class="card" style="width: 20rem; height: auto">
-      <%= link_to cl_image_tag("xacrvk9drxisoggk2dca", height: 300, crop: :fill), item_path(item) %>
+      <%= link_to cl_image_tag @item.photo.key, height: 300, crop: :fill, item_path(item) %>
       <div class="card-body">
         <p><b><%= item.name %></b></p>
         <p class="card-text"><%= item.description %></p>
+    <% if item.favorite?(current_user)%>
+      <%= link_to 'Enlever des favoris' %>
+    <% else %>
+      <%= link_to 'Ajouter aux favoris' %>
+    <% end %>
       </div>
     </div>
-
-    <% if item.favorite?(current_user)%>
-      <h4>Coeur</h4>
-    <% else %>
-      <h4 class="text-white bg-red-300 rounded-full">pas coeur</h4>
-    <% end %>
 
   <% end %>
 </div>

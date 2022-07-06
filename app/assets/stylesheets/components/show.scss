@@ -4,8 +4,26 @@
   margin: 25px 25px 25px;
   border-radius: 3px;
   display: flex;
-  justify-content: space-between;
-}
+  width: 800px;
+  padding-right: 2px;
+  }
   img {
     padding: 10px;
   }
+.show-page{
+  display: flex;
+}
+
+.container {
+  width: 100px;
+  padding-left: 2px;
+  padding-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  justify-items: center;
+}
+
+.form-wrapper{
+padding-right: 35px;
+padding-top: 30px;
+}
