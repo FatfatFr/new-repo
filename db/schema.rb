@@ -27,20 +27,6 @@ ActiveRecord::Schema.define(version: 2022_07_06_100449) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "favorite_tables", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "item_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_favorite_tables_on_item_id"
-    t.index ["user_id"], name: "index_favorite_tables_on_user_id"
-  end
-
-  create_table "favorites", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "category"
@@ -81,8 +67,6 @@ ActiveRecord::Schema.define(version: 2022_07_06_100449) do
 
   add_foreign_key "bookings", "items"
   add_foreign_key "bookings", "users"
-  add_foreign_key "favorite_tables", "items"
-  add_foreign_key "favorite_tables", "users"
   add_foreign_key "reviews", "items"
   add_foreign_key "reviews", "users"
 end
